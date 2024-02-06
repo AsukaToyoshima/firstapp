@@ -54,20 +54,15 @@ app.post("/posts/:id/update", async(req, res) => {
 })
 
 // Delete
-// app.get("/blog/delete/:id", async(req, res) => {
-//   const singleBlog = await BlogModel.findById(req.params.id)  
-//   res.render("blogDelete", {singleBlog})
-// })
-
-// app.post("/blog/delete/:id", (req, res) => {
-//   BlogModel.deleteOne({_id: req.params.id}).exec((error) => {
-//       if(error){
-//           res.render("error", {message: "/blog/deleteのエラー"})
-//       }else{
-//           res.redirect("/")
-//       }
-//   })
-// })
+app.post("/posts/:id/delete", async(req, res) => {
+  try {
+    PostModel.deleteOne({_id: req.params.id})
+    console.log("データ削除に成功しました");
+  } catch (error) {
+    console.log("データ削除にエラーがありました")
+  }
+  res.redirect("/posts");
+})
 
 
 // Connecting to port
