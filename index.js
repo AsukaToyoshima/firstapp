@@ -30,27 +30,28 @@ app.post("/posts", async (req, res) => {
 })
 
 //Read
-app.get("/posts", async (req, res) => {
+app.get("/posts", async(req, res) => {
   const posts =  await PostModel.find();
   console.log(posts)
   res.send("一覧ページ")
 })
 
 // Update
-// app.get("/blog/update/:id", async(req, res) => {
-//   const singleBlog = await BlogModel.findById(req.params.id)  
-//   res.render("blogUpdate", {singleBlog})
-// })  
+app.get("/posts/:id/edit", async(req, res) => {
+  const post = await PostModel.findById(req.params.id)  
+  console.log(post)
+  res.send("編集ページ")
+})  
 
-// app.post("/blog/update/:id", (req, res) => {
-//   BlogModel.updateOne({_id: req.params.id}, req.body).exec((error) => {
-//       if(error){
-//           res.render("error", {message: "/blog/updateのエラー"})
-//       }else{
-//           res.redirect("/")
-//       }
-//   })
-// })
+app.post("/posts/:id/update", async(req, res) => {
+  try {
+    await PostModel.updateOne({_id: req.params.id}, req.body);
+    console.log("データ更新に成功しました");
+  }catch(error){
+    console.log("データ更新にエラーがありました")
+  }
+  res.redirect("/posts");
+})
 
 // Delete
 // app.get("/blog/delete/:id", async(req, res) => {
