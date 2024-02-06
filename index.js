@@ -30,8 +30,10 @@ app.post("/posts", async (req, res) => {
 })
 
 //Read
-app.get("/posts", (req, res) => {
-  res.send("こんにちは");
+app.get("/posts", async (req, res) => {
+  const posts =  await PostModel.find();
+  console.log(posts)
+  res.send("一覧ページ")
 })
 
 // Update
