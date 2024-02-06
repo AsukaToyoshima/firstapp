@@ -1,0 +1,57 @@
+const express = require("express")
+const app = express()
+
+// Create
+
+app.get("/posts/new", (req, res) => {
+  res.sendFile(__dirname+"/views/new.html")
+})
+
+app.post("/posts", (req, res) => {
+  res.send("投稿どね");
+
+})
+
+//Read
+app.get("/", (req, res) => {
+  res.send("こんにちは");
+})
+
+// Update
+// app.get("/blog/update/:id", async(req, res) => {
+//   const singleBlog = await BlogModel.findById(req.params.id)  
+//   res.render("blogUpdate", {singleBlog})
+// })  
+
+// app.post("/blog/update/:id", (req, res) => {
+//   BlogModel.updateOne({_id: req.params.id}, req.body).exec((error) => {
+//       if(error){
+//           res.render("error", {message: "/blog/updateのエラー"})
+//       }else{
+//           res.redirect("/")
+//       }
+//   })
+// })
+
+// Delete
+// app.get("/blog/delete/:id", async(req, res) => {
+//   const singleBlog = await BlogModel.findById(req.params.id)  
+//   res.render("blogDelete", {singleBlog})
+// })
+
+// app.post("/blog/delete/:id", (req, res) => {
+//   BlogModel.deleteOne({_id: req.params.id}).exec((error) => {
+//       if(error){
+//           res.render("error", {message: "/blog/deleteのエラー"})
+//       }else{
+//           res.redirect("/")
+//       }
+//   })
+// })
+
+
+// Connecting to port
+app.listen(5000, () => {
+    console.log("Listening on localhost port 5000")
+})
+
