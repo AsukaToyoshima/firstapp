@@ -59,7 +59,7 @@ app.post("/posts/:id/update", async(req, res) => {
 // Delete
 app.post("/posts/:id/delete", async(req, res) => {
   try {
-    PostModel.deleteOne({_id: req.params.id})
+    await PostModel.deleteOne({_id: req.params.id})
     console.log("データ削除に成功しました");
   } catch (error) {
     console.log("データ削除にエラーがありました")

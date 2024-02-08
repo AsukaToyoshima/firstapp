@@ -23,8 +23,10 @@
         </div>
 
         <div class="right-content">
-          <a href="/posts/<%= post.id %>/edit">編集</a>
-          <button>削除</button>
+          <a href="/posts/<%= post.id %>/edit" class="btn">編集</a>
+          <form action="/posts/<%= post.id %>/delete" method="post" style="display: inline;">
+            <button type="submit" class="btn">削除</button>
+          </form>
         </div>
         
       </div>
