@@ -43,7 +43,7 @@ app.get("/posts", async(req, res) => {
 app.get("/posts/:id/edit", async(req, res) => {
   const post = await PostModel.findById(req.params.id)  
   console.log(post)
-  res.send("編集ページ")
+  res.render("edit", {post})
 })  
 
 app.post("/posts/:id/update", async(req, res) => {

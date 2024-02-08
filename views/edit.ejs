@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FirstApp</title>
+    <link href="/public/css/style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <h1>編集ページ</h1>
+    
+    <form action="/posts/<%= post._id %>/update" method="post">
+      <input type="text" name="content" value="<%= post.content %>">
+      <button type="submit">投稿する</button>
+    </form>
+
+  </body>
+</html>
+
+
