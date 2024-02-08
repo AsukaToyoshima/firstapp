@@ -35,14 +35,12 @@ app.post("/posts", async (req, res) => {
 //Read
 app.get("/posts", async(req, res) => {
   const posts =  await PostModel.find();
-  console.log(posts)
   res.render("index", {posts})
 })
 
 // Update
 app.get("/posts/:id/edit", async(req, res) => {
   const post = await PostModel.findById(req.params.id)  
-  console.log(post)
   res.render("edit", {post})
 })  
 
