@@ -1,0 +1,20 @@
+.post{
+  border: 1px solid;
+  width: 45%;
+  margin-top: 30px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-date{
+  color: gray;
+}
+
+
+.right-content{
+  display: flex;
+  align-items: center;
+
+  padding-right: 10px;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FirstApp</title>
+    <link href="/public/css/style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <h1>Top page</h1>
+
+    <div>新規投稿</div>
+
+    <% posts.forEach((post)=> { %>
+      <div class="post">
+        
+        <div class="left-contents">
+          <div class="post-date">
+            投稿日時：<%= post.created_at %>
+          </div>
+          <div class="post-content">
+            <%= post.content %>
+          </div>
+        </div>
+
+        <div class="right-content">
+          <button>編集</button>
+          <button>削除</button>
+        </div>
+        
+      </div>
+    <% }) %>
+
+  </body>
+</html>

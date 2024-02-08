@@ -2,6 +2,9 @@ const express = require("express")
 const app = express()
 app.use(express.urlencoded({ extended: true }))
 
+app.set("view engine", "ejs")
+app.use("/public", express.static("public"))
+
 const mongoose = require("mongoose")
 mongoose.connect("mongodb+srv://asukatoyoshima:techcamp@cluster0.wam4ecw.mongodb.net/blogUserDatabase?retryWrites=true&w=majority")
   .then(()=> { console.log("Success: Connected to MongoDB") })
@@ -33,7 +36,7 @@ app.post("/posts", async (req, res) => {
 app.get("/posts", async(req, res) => {
   const posts =  await PostModel.find();
   console.log(posts)
-  res.send("一覧ページ")
+  res.render("index", {posts})
 })
 
 // Update
