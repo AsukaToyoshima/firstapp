@@ -19,7 +19,7 @@ const PostModel = mongoose.model("Post", PostSchema)
 
 // Create
 app.get("/posts/new", (req, res) => {
-  res.sendFile(__dirname+"/views/new.html")
+  res.render("new")
 })
 
 app.post("/posts", async (req, res) => {
