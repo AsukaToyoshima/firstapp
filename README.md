@@ -1,6 +1,6 @@
 # 本アプリの概要
 Expressで最低限のCRUD要件を満たしたアプリです。フロントはFirstAppをベースに、編集、削除のUIを追加しています。\n
-MVCにファイル分割実施。ViewはEJS使用。DBはMongoDB Atlasを使用。
+MVCにファイル分割実施。Viewは、DBはMongoDB Atlasを使用。
 
 
 # 動作環境
@@ -20,3 +20,6 @@ MVCにファイル分割実施。ViewはEJS使用。DBはMongoDB Atlasを使用�
 
 ## 4. アプリの起動
 ターミナルで`node index.js`を実行する。（nodemonでも可）
+
+## 5. ブラウザで接続
+ブラウザで`localhost:5000/posts`にアクセス。
