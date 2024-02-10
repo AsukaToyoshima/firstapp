@@ -23,7 +23,10 @@
         </div>
 
         <div class="right-content">
+          <!-- 編集ボタン -->
           <a href="/posts/update/<%= post.id %>" class="btn">編集</a>
+
+           <!-- 削除ボタン(aタグではpostメソッドを送れないためformタグを使用) -->
           <form action="/posts/delete/<%= post.id %>" method="post" style="display: inline;">
             <button type="submit" class="btn">削除</button>
           </form>

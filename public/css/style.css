@@ -11,14 +11,15 @@
   color: gray;
 }
 
+/* 編集ボタンと削除ボタンの見栄えを統一させるためのCSS */
 .btn {
-  display: inline-block; /* ボックスモデルとして表示 */
-  margin: 5px; /* 余白 */
-  padding: 5px 10px; /* 内側の余白 */
-  text-decoration: none; /* アンダーラインを消去 */
-  color: white; /* 文字色 */
+  display: inline-block;    /* ボックスモデルとして表示 */
+  margin: 5px;              /* 余白 */
+  padding: 5px 10px;        /* 内側の余白 */
+  text-decoration: none;    /* アンダーラインを消去 */
+  color: white;           /* 文字色 */
   background-color: grey; /* 背景色 */
-  border: none; /* ボーダー無し */
-  cursor: pointer; /* カーソルをポインタに */
-  font-size: 16px;
+  border: none;             /* ボーダー無し */
+  cursor: pointer;          /* カーソルをポインタに */
+  font-size: 16px;          /* 文字サイズ */
 }
