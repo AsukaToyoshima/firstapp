@@ -18,8 +18,19 @@ MVCにファイル分割実施。Viewは、DBはMongoDB Atlasを使用。
 ## 3. パッケージのインストール
 ターミナルでCloneしたアプリのディレクトリに移動し、`npm install`を実行する。
 
-## 4. アプリの起動
+## 4. データベースの作成
+
+ターミナルでmysqlに接続し、
+```
+mysql -u root
+```
+firstapp_prismaというデータベースを作成してください。
+```
+CREATE DATABASE firstapp_prisma;
+```
+
+## 5. アプリの起動
 ターミナルで`node index.js`を実行する。（nodemonでも可）
 
-## 5. ブラウザで接続
+## 6. ブラウザで接続
 ブラウザで`localhost:5000/posts`にアクセス。
