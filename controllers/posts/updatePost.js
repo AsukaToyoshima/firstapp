@@ -1,9 +1,12 @@
-const PostModel = require("../../models/post")
+//prisma読み込み
+const { PrismaClient } = require('@prisma/client');
+const prisma = new PrismaClient();
 
 // 更新処理
 module.exports = async(req, res) => {
   try {
-    await PostModel.updateOne({_id: req.params.id}, req.body); //指定の投稿をreq.bodyの値で保存
+    const postId = parseInt(req.params.id, 10);  //パラメータの値はString型のためInt型へ変換
+    await prisma.posts.update({where: {id: postId}, data: {content: req.body.content}})  //更新処理。引数のdataは、data: req.bodyでも可
     console.log("データ更新に成功しました");
   }catch(error){
     console.log("データ更新にエラーがありました")
