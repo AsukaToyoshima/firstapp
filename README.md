@@ -20,17 +20,27 @@ MVCにファイル分割実施。Viewは、DBはMongoDB Atlasを使用。
 
 ## 4. データベースの作成
 
-ターミナルでmysqlに接続し、
+ターミナルでmysqlに接続し、ロール、データベースを作成してください。
+ロール名とパスワードがわかれば、作成の手順は飛ばしても大丈夫です。
 ```
-mysql -u root
-```
-firstapp_prismaというデータベースを作成してください。
-```
-CREATE DATABASE firstapp_prisma;
+psql postgres  // postgresというデフォルトのロールでpostgresqlに入る
+
+CREATE ROLE ‘《ロール名》’ WITH LOGIN PASSWORD ’《パスワード》’; // ロールを作成する。
+
+\du     //ロールが作成できているか確認する
+
+CREATE DATABASE firstapp_prisma WITH OWNER 《ロール名》;    //先ほど作成したロールをオーナーに指定し、データベースを作成
 ```
 
-## 5. アプリの起動
+## 5. データベースとアプリの接続設定を書き換える
+
+.envのDATABASE_URLの値を、以下のように修正する。
+```
+DATABASE_URL="postgresql://《先ほど用意したロール名》:《ロールのパスワード》@localhost:5432/firstapp_prisma
+```
+
+## 6. アプリの起動
 ターミナルで`node index.js`を実行する。（nodemonでも可）
 
-## 6. ブラウザで接続
+## 7. ブラウザで接続
 ブラウザで`localhost:5000/posts`にアクセス。
