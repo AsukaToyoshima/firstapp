@@ -38,9 +38,15 @@ CREATE DATABASE firstapp_prisma WITH OWNER 《ロール名》;    //先ほど作
 ```
 DATABASE_URL="postgresql://《先ほど用意したロール名》:《ロールのパスワード》@localhost:5432/firstapp_prisma
 ```
+## 6. マイグレート
 
-## 6. アプリの起動
+以下のコマンドを実行し、マイグレートを実行してください。
+```
+npx prisma migrate reset
+```
+
+## 7. アプリの起動
 ターミナルで`node index.js`を実行する。（nodemonでも可）
 
-## 7. ブラウザで接続
+## 8. ブラウザで接続
 ブラウザで`localhost:5000/posts`にアクセス。
