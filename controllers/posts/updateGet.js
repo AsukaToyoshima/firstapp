@@ -6,5 +6,5 @@ const prisma = new PrismaClient();
 module.exports = async(req, res) => {
   const postId = parseInt(req.params.id, 10);  //パラメータの値はString型のためInt型へ変換
   const post = await prisma.posts.findUnique({where: { id: postId}}) //指定の投稿を取得
-  res.render("updateGet", {post})
+  res.render("posts/updateGet", {post})
 }

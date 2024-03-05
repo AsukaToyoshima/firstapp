@@ -15,7 +15,7 @@ const routers = require("./routes")
 app.use(routers)
 
 // localhost:5000で起動
-app.listen(5000, () => {
-    console.log("Listening on localhost port 5000")
+app.listen(3000, () => {
+    console.log("Listening on localhost port 3000")
 })
 
